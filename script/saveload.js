@@ -107,7 +107,14 @@ function reset() {
   autoIncrementy: [1,1,1],
   achieveRow: [1],
   achievement: [],
-  publicTesting: 0
+  publicTesting: 0,
+  fractalEngine: [newFractalEngine(1)],
+  fractalShift: 0,
+  orbEffectExp: 0,
+  orbUnlock: 0,
+  orbEnabled: [0,0,0,0,0],
+  fractalUpgrades: [0,0,0,0,0],
+  fractalBase: 100000
   }
   //By default, it should be a file export k
   //Since with plain text you can lose it easily
@@ -254,7 +261,7 @@ function loadGame(loadgame) {
     game[i] = loadgame[i];
   }
   if (inPublicTesting()) game.publicTesting=1
-  //if (inPrivateTesting()) game.publicTesting=0
+  if (inPrivateTesting()) game.publicTesting=0
   if (game.publicTesting==1&&!inPublicTesting()) {
     $.notify("Import Failed, attemped to import public testing version into the main game","error")
     game = JSON.parse(tempgame)
@@ -285,6 +292,11 @@ function loadGame(loadgame) {
   game.iups[0]=ENify(game.iups[0])
   game.iups[1]=ENify(game.iups[1])
   game.iups[2]=ENify(game.iups[2])
+  for (let u in game.fractalEngine) {
+    for (let v in game.fractalEngine[u]) {
+      game.fractalEngine[u][v]=ENify(game.fractalEngine[u][v])
+    }
+  }
   game.spentENFunctions=ENify(game.spentENFunctions)
   for (let i in game.ocBestIncrementy) {game.ocBestIncrementy[i]=ENify(game.ocBestIncrementy[i])}
   document.getElementById("nonC8Auto").value = game.qolSM.nc8;
@@ -341,7 +353,12 @@ function importy(file=0) {
       loadGame(loadgame);
       $.notify("Import Successful!","success")
       }
+        window.setTimeout(() => {
+        save()
+       window.location.reload()
+        },200)
       }, 100)
+      
 
   } else {
   let loadgame = "";
@@ -349,6 +366,10 @@ function importy(file=0) {
   if (loadgame !== "") {
     loadGame(loadgame);
     $.notify("Import Successful!","success")
+    window.setTimeout(() => {
+    save()
+    window.location.reload()
+    },200)
   }
   }
 }

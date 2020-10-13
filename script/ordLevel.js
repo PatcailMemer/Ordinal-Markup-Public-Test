@@ -76,7 +76,6 @@ let ordThresh = {
   154: () => BHO*342,
   155: () => Infinity
 }
-
 //EN(3).pow(41*3**27)
 
 let getPsi = ord => {

@@ -154,7 +154,7 @@ function increment(manmade = 0) {
     }
     clickCoolDown = 2;
   }
-  if (manmade === 1) render();
+  //if (manmade === 1) render();
 }
 
 function maximize(manmade = 0) {
@@ -174,7 +174,7 @@ function maximize(manmade = 0) {
     game.over = 0;
     clickCoolDown = 2;
   }
-  if (manmade === 1) render();
+  //if (manmade === 1) render();
 }
 
 let deltaTime;
@@ -188,11 +188,11 @@ function loop(unadjusted, off = 0) {
   checkAchieve()
   updateOptions()
   if (game.incrementyverse == 1) {
-    incrementyverseLoop(unadjusted,off)
+    incrementyverseLoop(Math.max(0,unadjusted),off)
     game.lastTick = Date.now();
     return
   }
-  let ms=unadjusted
+  let ms=Math.max(0,unadjusted)
   if (inChal(8)&&game.decrementy<10&&unadjusted != 0) {
     ms=50
   }
@@ -757,7 +757,7 @@ function render() {
     "x";
   get("incrementyText2").textContent =
     "You are getting " +
-    beautifyEN(getIncrementyRate(1000)) +
+    beautifyEN(getIncrementyRate(1000).div((game.challenge == 9) ? 1e15 : 1)) +
     " incrementy per second";
   get("iup1").innerHTML =
     "Base Incrementy multiplier is raised to the 1.05<br>Cost: " +
@@ -1154,7 +1154,7 @@ They are based on your Singularity level.`
     get("oc" + num).classList.add(game.omegaChallenge==num?"OmegaRun":"collapse")
   })
   get("bup5Cost").textContent=Math.round(5**(0.5**getOCComp(3)))
-  get("bup9Cost").textContent=Math.round(73**(0.5**getOCComp(3)))
+  get("bup9Cost").textContent=Math.round(72**(0.5**getOCComp(3)))
   get("bup13Cost").textContent=Math.round(53**(0.5**getOCComp(3)))
   get("bup17Cost").textContent=beautify((bupUpgradeCosts[16])**(0.5**getOCComp(3)))
   get("totalOmegaChalComp").textContent=`Your ${getSumOC().toFixed(2)} Omega Challenge Completions are multiplying booster gain from milestones and OP gain by ${Math.max(getSumOC(),1).toFixed(2)}`
@@ -1802,6 +1802,10 @@ function beautify(number, f = 0) {
 
 function beautifyEN(n, f = 0) {
   let x = EN(n);
+  if (x.gte("eeeee10")) {
+    return `10{${x.array[x.array.length-1][0]+1}}${x.array[x.array.length-1][1]+2}`
+    return x.toString()
+  }
   if (x.lte(1e5)) {
     return f === 0 ? x.floor().toString() : x.toNumber().toFixed(f);
   } else if (x.lte("ee5")) {
@@ -1889,7 +1893,7 @@ function csubTab(t) {
 }
 
 function isubTab(t) {
-  [1].forEach(i => get("isubTab"+i).style.display = "none")
+  [1,2,3].forEach(i => get("isubTab"+i).style.display = "none")
   get("isubTab" + t).style.display = "inline-block";
   game.isubTab = t;
 }

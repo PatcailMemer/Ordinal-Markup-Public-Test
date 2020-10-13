@@ -56,13 +56,15 @@ class SingularityFunction {
     }
   }
   specialReq() {
-    if (this.id==41&&game.achievement.length<=79.5) return false
+    if (this.id==41&&game.achievement.length<=89.5) return false
     if (this.id==51&&getSumOfChallenges()<=33.5) return false
     if (this.id==71&&getSumOfChallenges()<=35.5) return false
     if (this.id==73&&game.bestFBps<500000000) return false
     if (this.id==92&&EN(getSingLevel()).minus(game.spentENFunctions).lt(3250)) return false
     if (this.id==101&&EN(getSingLevel()).minus(game.spentENFunctions).lt(20)) return false
     if (this.id==111&&EN(getSingLevel()).minus(game.spentENFunctions).lt(600)) return false
+    if (this.id==121&&!game.ivups.includes(4)) return false
+    if (this.id==141&&game.fractalShift<=4.5) return false
     if (game.sfBought.includes(121) && game.sfBought.some(a => {return Math.floor(a/10)==Math.floor(this.id/10)})) return false
     return true
   }
@@ -110,6 +112,9 @@ let singfunctions = [
   SF(EN(2e5), [102], 114, [0,0]),
   SF(EN("ee8"), [103], 115, [0,0]),
   SF(EN(0), [115], 121, [0,0]),
+  SF(EN("10^^100"), [121], 131, [0,0]),
+  SF(EN("10^^^^100"), [121], 132, [0,0]),
+  SF(EN(0), [131], 141, [0,0]),
 ];
 
 function buyMaxFunction() {

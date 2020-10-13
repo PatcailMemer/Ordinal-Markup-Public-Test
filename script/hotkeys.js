@@ -13,7 +13,7 @@ const keybinds = {
     c: () => {
 		if (game.collapseUnlock === 1) collapse(1);
 	}//,
-//enter: () => {$.notify("ENTER KEY TRICK ALERT","error")}
+  //enter: () => {game.incrementyverse == 1?alert("We disabled enter keys in Incrementyverse"):0}
 
 };
 

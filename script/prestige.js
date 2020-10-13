@@ -19,7 +19,7 @@ function infinity(manmade = 0) {
     game.manualClicksLeft = 1000;
   }
   loop(0);
-  if (manmade === 1) render();
+  //if (manmade === 1) render();
 }
 
 // There was "manmade = 0" as the args, but manmade was never used, so I removed it.

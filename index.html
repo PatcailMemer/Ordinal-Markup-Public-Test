@@ -43,6 +43,7 @@
     <button onclick="Tab(7)" id="collapseTabButton" class="collapseTabButton">Collapse</button><text class="invisible invisTab">0</text>
     <button onclick="Tab(8)" id="incrementyverseTabButton" class="boosterTabButton" style="width:190px">Incrementyverse</button><text class="invisible invisTab">0</text>
     <p></p>
+    <div style="opacity: 100%; display: none" id="flash">O</div>
     <div id="Tab1">
       <button onclick="increment(1)" class="normalButton thicc canThicc">Increase Ordinal by 1</button>
         <button onclick="maximize(1)" class="normalButton thicc canThicc">Maximize ordinal, but number does not increase</button>
@@ -104,7 +105,7 @@ Only to find the exact same climb once more.</p>-->
       Your current Ordinal Level is <span id="psiLevel"></span>
       <p>Next Ordinal Level is at <span id="nextPsiLevel"></span></p>
       Your highest Ordinal Level is <span id="bestPsiLevel"></span>
-      <h1 style="text-align: center">Achievements (<text id="achieveTotal">100</text>/100)</h1>
+      <h1 style="text-align: center">Achievements (<text id="achieveTotal">100</text>/128)</h1>
       <h4 style="font-weight:normal;text-align: center">Progress in the game to earn achievements! They don't give any boost and are purely for bragging</h4>
       <table class="trueCenter long" id="achievementTable" style="width: 1250px"><tbody class="trueCenter long">
         <tr>
@@ -190,6 +191,30 @@ Only to find the exact same climb once more.</p>-->
           <td tooltip="gonna">Achievement 8</td>
           <td tooltip="tell">Achievement 9</td>
           <td tooltip="a">Achievement 10</td>
+        </tr>
+        <tr>
+          <td tooltip="lie">Achievement 1</td>
+          <td tooltip="and">Achievement 2</td>
+          <td tooltip="hurt">Achievement 3</td>
+          <td tooltip="you">Achievement 4</td>
+          <td tooltip="just">Achievement 5</td>
+          <td tooltip="got">Achievement 6</td>
+          <td tooltip="rick">Achievement 7</td>
+          <td tooltip="rolled">Achievement 8</td>
+          <td tooltip="ha">Achievement 9</td>
+          <td tooltip="ha">Achievement 10</td>
+        </tr>
+        <tr>
+          <td tooltip="lie">Achievement 1</td>
+          <td tooltip="and">Achievement 2</td>
+          <td tooltip="hurt">Achievement 3</td>
+          <td tooltip="you">Achievement 4</td>
+          <td tooltip="just">Achievement 5</td>
+          <td tooltip="got">Achievement 6</td>
+          <td tooltip="rick">Achievement 7</td>
+          <td tooltip="rolled">Achievement 8</td>
+          <td tooltip="ha">Achievement 9</td>
+          <td tooltip="ha">Achievement 10</td>
         </tr>
         <tr>
           <td tooltip="lie">Achievement 1</td>
@@ -616,7 +641,7 @@ Only to find the exact same climb once more.</p>-->
             <td style="width: 100%;display:inline;margin-left:10px;margin-right:10px"  class="long trueCenter"><button class="treeButton singularity" id="SF32" onclick="singfunctions[5].buy();resizeCanvas()">Third row of Incrementy applies to Decrementy <br> Cost: 10 Functions</button></td>
           </tr>
           <tr style="width: 100%;margin-bottom:30px" class="long trueCenter">
-            <td style="width: 100%;display:inline;margin-left:10px;margin-right:10px"  class="long trueCenter"><button class="treeButton singularity" id="SF41" onclick="singfunctions[6].buy();resizeCanvas()">Unlock the Portal<br>Need: 80 Achievements</button></td>
+            <td style="width: 100%;display:inline;margin-left:10px;margin-right:10px"  class="long trueCenter"><button class="treeButton singularity" id="SF41" onclick="singfunctions[6].buy();resizeCanvas()">Unlock the Portal<br>Need: 90 Achievements</button></td>
             <td style="width: 100%;display:inline;margin-left:10px;margin-right:10px"  class="long trueCenter"><button class="treeButton singularity" id="SF42" onclick="singfunctions[7].buy();resizeCanvas()">Quadruple OP and Decrementy from all sources<br> Cost: 2 Functions</button></td>
             <td style="width: 100%;display:inline;margin-left:10px;margin-right:10px;opacity:0" onclick="document.getElementById('sfsecret').style.opacity=1" id="sfsecret"  class="long trueCenter"><button class="treeButton singularity" style="cursor:default">You found an easter egg! Good job!</button></td>
           </tr>
@@ -658,7 +683,14 @@ Only to find the exact same climb once more.</p>-->
             <td style="width: 30%;display:inline;margin-left:10px;margin-right:10px"  class="long trueCenter"><button class="treeButton singularity" id="SF115" onclick="singfunctions[27].buy();resizeCanvas()">Incrementy Upgrade Autobuyers are another 10x faster<br>Cost: ee8 Functions</button></td>
           </tr>
           <tr style="width: 100%;margin-bottom:30px" class="long trueCenter">
-            <td style="width: 30%;display:inline;margin-left:10px;margin-right:10px"  class="long trueCenter"><button class="treeButton singularity" id="SF121" onclick="singfunctions[28].buy();resizeCanvas()">You can only buy at max 1 function upgrade per row<br>Free</button></td>
+            <td style="width: 30%;display:inline;margin-left:10px;margin-right:10px"  class="long trueCenter"><button class="treeButton singularity" id="SF121" onclick="singfunctions[28].buy();resizeCanvas()">You can only buy at max 1 function upgrade per row<br>Need: Fractal Engine</button></td>
+          </tr>
+          <tr style="width: 100%;margin-bottom:30px" class="long trueCenter">
+            <td style="width: 30%;display:inline;margin-left:10px;margin-right:10px"  class="long trueCenter"><button class="treeButton singularity" id="SF131" onclick="singfunctions[29].buy();resizeCanvas()" style="font-size:12pt">Each Fractal Shift that gives no energy orb gives +150% production<br>10{2}100 Functions</button></td>
+            <td style="width: 30%;display:inline;margin-left:10px;margin-right:10px"  class="long trueCenter"><button class="treeButton singularity" id="SF132" onclick="singfunctions[30].buy();resizeCanvas()">Energy Orb effectiveness speed x1.75<br>10{4}100 Functions</button></td>
+          </tr>
+          <tr style="width: 100%;margin-bottom:30px" class="long trueCenter">
+            <td style="width: 30%;display:inline;margin-left:10px;margin-right:10px"  class="long trueCenter"><button class="treeButton singularity" id="SF141" onclick="singfunctions[31].buy();resizeCanvas()">Fractal Shifts give a x<text id="sf141effect">5.00</text> production<br><br>Need: 5 Fractal Shifts</button></td>
           </tr>
         </tbody></table>
           <div style="height: 100px"></div>
@@ -715,12 +747,13 @@ Only to find the exact same climb once more.</p>-->
     
       </div>
       <div id="csubTab9" style="width: 100%;text-align:center">
-        <button id="enterIncrementyverseButton" class="enterIncrementyverseButton" onclick="die()">Enter the Incrementyverse<text style="font-size:30px" id="enterIncrementyverseRequirementText"><br>Requirement: 1e540 Incrementy and<br>80 Achievements</text></button>
-        <button id="enterIncrementyverseButton2" class="enterIncrementyverseButton" style="display:none"><text id="newTextFade">Enter the Incrementyverse<text style="font-size:30px"><br>Requirement: 1e540 Incrementy and<br>80 Achievements</text></text></button>
+        <button id="enterIncrementyverseButton" class="enterIncrementyverseButton" onclick="die()">Enter the Incrementyverse<text style="font-size:30px" id="enterIncrementyverseRequirementText"><br>Requirement: 1e540 Incrementy and<br>90 Achievements</text></button>
+        <button id="enterIncrementyverseButton2" class="enterIncrementyverseButton" style="display:none"><text id="newTextFade">Enter the Incrementyverse<text style="font-size:30px"><br>Requirement: 1e540 Incrementy and<br>90 Achievements</text></text></button>
         <div id="enterIncrementyTextWall">
         <p style="text-align:center">Current Best Incrementy: <text id="bestIncrementy">2.03e540</text> / 1.00e540</p>
         <p style="text-align:center"><i>When the universe ends, a world out there is waiting to be explored.</i></p>
         <p style="text-align:center"><i>By entering the Incrementyverse, you're willing to lose your life in pursuit of Infinity</i></p>
+          
         <text style="color:#00FF00">Pro:
         <p>
           Remove the Incrementy multiplier Cap
@@ -793,22 +826,24 @@ Only to find the exact same climb once more.</p>-->
     <div id="whitescreen">meme</div>
     <div id="Tab8">
       <p>
-      <button onclick="csubTab(1)" class="boosterButton subtab">Incrementyverse Upgrades</button>
+      <button onclick="isubTab(1)" class="boosterButton subtab">Incrementyverse Upgrades</button>
+      <button onclick="isubTab(2)" id="fractalEngineSubTab" class="boosterButton subtab">Fractal Engine</button>
+      <button onclick="isubTab(3)" id="energyOrbSubTab" class="boosterButton subtab">Energy Orbs</button>
       </p>
       <div id="isubTab1" style="display:block;width:100%">
         <b style="margin:10px;text-align: center;font-size: 20pt;display: inline-block;width:100%">You have <text id="incrementyverseupgradeincrementy">1</text> incrementy</b>
         <table class="trueCenter long" style="width: 808px"><tbody class="trueCenter long">
         <tr>
           <td><button class="treeButton locked" id="ivup1" onclick="ivup(1)" style="font-size:12pt">Gain 1e120x Incrementy per Incrementyverse upgrade<br>1e1136 Incrementy</button></td>
-          <td><button class="treeButton locked" id="ivup2" onclick="ivup(2)">Best Ever Incrementy multiplies OP gain<br><br>1e23580 Incrementy</button></td>
+          <td><button class="treeButton locked" id="ivup2" onclick="ivup(2)">Best Ever Incrementy multiplies OP gain<br><br>1e23500 Incrementy</button></td>
           <td><button class="treeButton locked" id="ivup3" onclick="ivup(3)">Incrementy boosts all incrementy automation by 3.00x<br>e5e7 Incrementy</button></td>
           <td><button class="treeButton locked" id="ivup4" onclick="ivup(4)">Unlock the Fractal Engine<br><br>eee10 Incrementy</button></td>
         </tr>
         <tr>
-          <td><button class="treeButton locked" id="ivup5" onclick="ivup(5)">???<br>???</button></td>
-          <td><button class="treeButton locked" id="ivup6" onclick="ivup(6)">???<br>???</button></td>
-          <td><button class="treeButton locked" id="ivup7" onclick="ivup(7)">???<br>???</button></td>
-          <td><button class="treeButton locked" id="ivup8" onclick="ivup(8)">???<br>???</button></td>
+          <td><button class="treeButton locked" id="ivup5" onclick="ivup(5)">Unlock Fractal Shifts<br><br>10{2}10000 Incrementy</button></td>
+          <td><button class="treeButton locked" id="ivup6" onclick="ivup(6)">Unlock Fractal Engine Upgrades<br>10{3}1000 Incrementy</button></td>
+          <td><button class="treeButton locked" id="ivup7" onclick="ivup(7)">The Fractal Engine is 4x faster<br>10{5}100 Incrementy</button></td>
+          <td><button class="treeButton locked" id="ivup8" onclick="ivup(8)">Unlock Fractal Boosts<br><b>COMING SOON</b><br>10{10}10 Incrementy</button></td>
         </tr>
         <tr>
           <td><button class="treeButton locked" id="ivup9" onclick="ivup(9)">???<br>???</button></td>
@@ -817,6 +852,70 @@ Only to find the exact same climb once more.</p>-->
           <td><button class="treeButton locked" id="ivup12" onclick="ivup(12)">???<br>???</button></td>
         </tr>
         </tbody></table>
+      </div>
+      <div id="isubTab2" style="display:block;width:100%">
+        <text style="width:auto;text-align: center;display:block;margin-bottom:20px;padding: 0;" id="fractalDimensionalBase">Fractal Dimensional Base: 100000<br>Incrementy: A lot</text>
+        <table class="long"><tr class="long"><td id="fractalEngineMachines">
+          <button style="width:100%;height:90px;margin-bottom:10px;font-size:14pt" class="boosterButton" onclick="buyFractalEngine(1)">
+            <table class="long"><tbody><tr class="long"><td style="text-align:left;width:60%">
+          Buy Fractal Engine Level 1<br>Owned: 0<br>Cost: 9.99e30107 Incrementy</td>
+          <td style="text-align:right;width:40%">Automation Charge: 0/10<br>+0/s
+          </td></tr></tbody></table>
+          </button>
+          <button style="width:100%;height:90px;margin-bottom:10px;font-size:14pt;display:none" class="boosterButton" onclick="buyFractalEngine(2)">
+            <table class="long"><tbody><tr class="long"><td style="text-align:left;width:60%">
+          Buy Fractal Engine Level 1<br>Owned: 0<br>Cost: 9.99e30107 Incrementy</td>
+          <td style="text-align:right;width:40%">Automation Charge: 0/10<br>+0/s
+          </td></tr></tbody></table>
+          </button>
+          <button style="width:100%;height:90px;margin-bottom:10px;font-size:14pt;display:none" class="boosterButton" onclick="buyFractalEngine(3)">
+            <table class="long"><tbody><tr class="long"><td style="text-align:left;width:60%">
+          Buy Fractal Engine Level 1<br>Owned: 0<br>Cost: 9.99e30107 Incrementy</td>
+          <td style="text-align:right;width:40%">Automation Charge: 0/10<br>+0/s
+          </td></tr></tbody></table>
+          </button>
+          <button style="width:100%;height:90px;margin-bottom:10px;font-size:14pt;display:none" class="boosterButton" onclick="buyFractalEngine(4)">
+            <table class="long"><tbody><tr class="long"><td style="text-align:left;width:60%">
+          Buy Fractal Engine Level 1<br>Owned: 0<br>Cost: 9.99e30107 Incrementy</td>
+          <td style="text-align:right;width:40%">Automation Charge: 0/10<br>+0/s
+          </td></tr></tbody></table>
+          </button>
+        </td>
+        <td id="fractalShiftBoostTab" style="height:100%;">
+          <text style="text-align:center;width:100%;display:block" id="fractalShifts">You have 43975 Fractal Shifts</text>
+          <div class="boosterButton trueCenter" style="width:70%;height:auto;margin-top:20px" id="fractalShift" onclick="fractalShift()">
+            <p>Perform a Fractal Shift<br>Requirement: 10^^1000 Incrementy</p>
+          </div>
+          <div class="trueCenter" style="width:70%;height:auto;margin-top:20px" id="cumFSReward">
+            Cumulative Rewards:<br>
+            Fractal Engines to Level 420<br>
+            Fractal Engine Base -666<br>
+            69 Energy Orbs
+          </div>
+        </td>
+        </tr></table>
+        <table class="trueCenter long" style="width: 1010px;margin-top:50px" id="feups"><tbody class="trueCenter long">
+        <tr>
+          <td><button class="treeButton boosterButton" id="feup1" onclick="fuep(1)">Lubricate the Fractal Engine and double the speed!<br><text id="feup1c">10^^10</text> Incrementy</button></td>
+          <td><button class="treeButton locked" id="feup2" onclick="fuep(2)">Energy Orb effectiveness grows 20% faster<br><text id="feup2c">10^^10</text> Incrementy</button></td>
+          <td><button class="treeButton locked" id="feup3" onclick="fuep(3)">Energy Orb base multiplier +0.3x<br><br><text id="feup3c">10^^10</text> Incrementy</button></td>
+          <td><button class="treeButton locked" id="feup4" onclick="fuep(4)">Discount the first 3 fractal upgrades by 1 arrow<br><text id="feup4c">10^^10</text> Incrementy</button></td>
+          <td><button class="treeButton locked" id="feup5" onclick="fuep(5)">Gain a free Fractal Shift<br><br><text id="feup5c">10^^10</text> Incrementy</button></td>
+        </tr>
+        </tbody></table>
+        <p id="fueptext" style="text-align:center;margin-top:20px">The first free fractal upgrades reset upon Fractal Shifts, while the last two don't</p>
+      </div>
+      <div id="isubTab3" style="display:block;width:100%">
+        <text style="width:auto;text-align: center;display:block;font-size:20pt;margin-bottom:20px;padding: 0;" id="energyOrbText"><b>You have 100 Energy Orbs at 42.952% effectiveness,<br>providing a 5.62e981x multiplier</b></text>
+        <p style="width:auto;text-align: center;" id="energyOrbText2">Efficiency: +0.001%/sec (0.0425x speed)</p>
+        <table class="long" style="text-align:center"><tbody class="long"><tr class="long">
+          <td><button class="boosterButton treeButton" onclick="toggleOrb(1)">Energy Orbs boost Incrementy Autobuyers<br>Penalty: ÷200 speed<br>Boosted: <text id="energyOrb1">ON</text></button></td>
+          <td><button class="boosterButton treeButton" onclick="toggleOrb(2)">Energy Orbs boost Odd Fractal Engines<br>Penalty: ÷1000 speed<br>Boosted: <text id="energyOrb2">ON</text></button></td>
+          <td><button class="boosterButton treeButton" onclick="toggleOrb(3)">Energy Orbs boost Even Fractal Engines<br>Penalty: ÷1000 speed<br>Boosted: <text id="energyOrb3">ON</text></button></td>
+          <td><button class="boosterButton treeButton">Reach 50,000 Fractal Shifts</button></td>
+          <td style="display:none"><div width="100px">Locked</div></td>
+        </tr></tbody></table>
+        <p style="text-align:center;margin-top:50px"><i>You may enable or disable these Energy Orb boosts to allow them to boost different things. However, modifying these settings will reset your efficiency</i></p>
       </div>
     </div>
   </body>
